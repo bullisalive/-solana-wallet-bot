@@ -1,9 +1,9 @@
+# solana_bot.py
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 from solana.rpc.api import Client
 from solana.publickey import PublicKey
 import os
-import asyncio
 
 # Solana RPC Endpoint
 solana_client = Client("https://api.mainnet-beta.solana.com")
@@ -26,6 +26,6 @@ async def main():
     bot_token = os.getenv("TELEGRAM_BOT_TOKEN")  # Load token from environment variable
     app = Application.builder().token(bot_token).build()
     app.add_handler(CommandHandler("search", search_wallet))
+    print("Bot is running...")
     await app.run_polling()
 
-asyncio.run(main())
