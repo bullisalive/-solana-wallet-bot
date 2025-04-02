@@ -1,0 +1,2 @@
+python-telegram-bot==20.3
+solana-py==0.30.0
